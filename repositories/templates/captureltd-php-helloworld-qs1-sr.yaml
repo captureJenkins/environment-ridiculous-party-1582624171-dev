@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: CaptureLTD
+    provider: github
+    repository: php-helloworld-qs1
+  name: captureltd-php-helloworld-qs1
+spec:
+  description: Imported application for CaptureLTD/php-helloworld-qs1
+  httpCloneURL: https://github.com/CaptureLTD/php-helloworld-qs1.git
+  org: CaptureLTD
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: php-helloworld-qs1
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/CaptureLTD/php-helloworld-qs1.git

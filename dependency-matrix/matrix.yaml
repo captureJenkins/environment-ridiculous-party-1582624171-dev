@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: CaptureLTD
+  repo: php-helloworld-qs1
+  url: https://github.com/CaptureLTD/php-helloworld-qs1.git
+  version: ""
+  versionURL: ""
