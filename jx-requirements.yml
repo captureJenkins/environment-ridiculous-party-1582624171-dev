@@ -3,7 +3,7 @@ autoUpdate:
   schedule: ""
 bootConfigURL: https://github.com/CaptureLTD/jenkins-x-boot-config
 cluster:
-  clusterName: ""
+  clusterName: ridiculous-party-1582624171
   devEnvApprovers:
   - capturematt
   environmentGitOwner: captureLTD
@@ -14,18 +14,20 @@ cluster:
   namespace: jx
   provider: eks
   region: eu-west-1
+  registry: 917980862284.dkr.ecr.eu-west-1.amazonaws.com
   vaultName: jx-vault
   zone: eu-west-1
 environments:
 - ingress:
     domain: aws.capture.limited
     externalDNS: true
-    namespaceSubDomain: -jx-dev.
+    namespaceSubDomain: -jx.
     tls:
       email: aws@capture.co.uk
       enabled: true
-      production: false
+      production: true
   key: dev
+  repository: environment-ridiculous-party-1582624171-dev
 - ingress:
     domain: aws.capture.limited
     externalDNS: true
@@ -35,6 +37,7 @@ environments:
       enabled: true
       production: false
   key: staging
+  repository: environment-ridiculous-party-1582624171-staging
 - ingress:
     domain: aws.capture.limited
     externalDNS: true
@@ -45,6 +48,7 @@ environments:
       enabled: true
       production: true
   key: production
+  repository: environment-ridiculous-party-1582624171-production
 gitops: true
 ingress:
   domain: aws.capture.limited
@@ -60,25 +64,25 @@ secretStorage: vault
 storage:
   backup:
     enabled: true
-    url: ""
+    url: s3://ridiculous-party-1582624171-backup-7dd1fedb-74b5-4862-8e8b-46e6
   logs:
     enabled: true
-    url: ""
+    url: s3://ridiculous-party-1582624171-logs-fe99985c-9260-4e0e-9e58-3014e9
   reports:
     enabled: true
-    url: ""
+    url: s3://ridiculous-party-1582624171-reports-10191647-4a9f-4a5f-b1dc-0cd
   repository:
     enabled: true
-    url: ""
+    url: s3://ridiculous-party-1582624171-repository-439c2766-1db1-42d7-a18d
 vault:
-  name: jx-vault
   aws:
     autoCreate: true
     iamUserName: jx-vault
+  name: jx-vault
 velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: "master"
+  ref: v1.0.359
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow

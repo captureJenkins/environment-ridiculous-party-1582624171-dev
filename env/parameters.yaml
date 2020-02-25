@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:ridiculous-party-1582624171/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: jenkins@capture.co.uk
+  token: vault:ridiculous-party-1582624171/pipelineUser:token
+  username: captureJenkins
+prow:
+  hmacToken: vault:ridiculous-party-1582624171/prow:hmacToken
