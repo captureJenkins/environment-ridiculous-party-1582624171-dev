@@ -1,0 +1,84 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/CaptureLTD/jenkins-x-boot-config
+cluster:
+  clusterName: ""
+  devEnvApprovers:
+  - capturematt
+  environmentGitOwner: captureLTD
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  provider: eks
+  region: eu-west-1
+  vaultName: jx-vault
+  zone: eu-west-1
+environments:
+- ingress:
+    domain: aws.capture.limited
+    externalDNS: true
+    namespaceSubDomain: -jx-dev.
+    tls:
+      email: aws@capture.co.uk
+      enabled: true
+      production: false
+  key: dev
+- ingress:
+    domain: aws.capture.limited
+    externalDNS: true
+    namespaceSubDomain: -jx-stage.
+    tls:
+      email: aws@capture.co.uk
+      enabled: true
+      production: false
+  key: staging
+- ingress:
+    domain: aws.capture.limited
+    externalDNS: true
+    ignoreLoadBalancer: true
+    namespaceSubDomain: -jx.
+    tls:
+      email: aws@capture.co.uk
+      enabled: true
+      production: true
+  key: production
+gitops: true
+ingress:
+  domain: aws.capture.limited
+  externalDNS: true
+  namespaceSubDomain: -jx.
+  tls:
+    email: aws@capture.co.uk
+    enabled: true
+    production: true
+kaniko: true
+repository: nexus
+secretStorage: vault
+storage:
+  backup:
+    enabled: true
+    url: ""
+  logs:
+    enabled: true
+    url: ""
+  reports:
+    enabled: true
+    url: ""
+  repository:
+    enabled: true
+    url: ""
+vault:
+  name: jx-vault
+  aws:
+    autoCreate: true
+    iamUserName: jx-vault
+velero:
+  schedule: ""
+  ttl: ""
+versionStream:
+  ref: "master"
+  url: https://github.com/jenkins-x/jenkins-x-versions.git
+webhook: prow
